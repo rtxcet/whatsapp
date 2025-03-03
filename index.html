@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhatsApp Toplu Mesaj Gönderici</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #128C7E;
+        }
+        #status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>WhatsApp Toplu Mesaj Gönderici</h2>
+        
+        <button id="startWhatsApp">WhatsApp'ı Başlat</button>
+        
+        <h3>Telefon Numaraları</h3>
+        <textarea id="numbers" rows="5" placeholder="Her satıra bir telefon numarası yazın (ülke kodu ile birlikte, örn: 905xxxxxxxxx)"></textarea>
+        
+        <h3>Mesaj</h3>
+        <textarea id="message" rows="5" placeholder="Göndermek istediğiniz mesajı yazın"></textarea>
+        
+        <button id="sendMessage">Mesajları Gönder</button>
+        
+        <div id="status"></div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+        
+        document.getElementById('startWhatsApp').addEventListener('click', () => {
+            ipcRenderer.send('start-whatsapp');
+        });
+        
+        document.getElementById('sendMessage').addEventListener('click', () => {
+            const numbers = document.getElementById('numbers').value
+                .split('\n')
+                .map(n => n.trim())
+                .filter(n => n);
+                
+            const message = document.getElementById('message').value;
+            
+            if (!numbers.length || !message) {
+                updateStatus('Lütfen telefon numaralarını ve mesajı girin!');
+                return;
+            }
+            
+            ipcRenderer.send('send-message', { numbers, message });
+        });
+        
+        ipcRenderer.on('status', (event, message) => {
+            updateStatus(message);
+        });
+        
+        function updateStatus(message) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+        }
+    </script>
+</body>
+</html> 

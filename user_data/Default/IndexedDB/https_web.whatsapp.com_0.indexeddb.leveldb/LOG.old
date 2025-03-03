@@ -1,0 +1,33 @@
+2025/03/03-02:02:19.177 409c Reusing MANIFEST C:\Users\Live\Documents\GitHub\whatsapp\user_data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/03-02:02:19.178 409c Recovering log #102
+2025/03/03-02:02:19.185 409c Reusing old log C:\Users\Live\Documents\GitHub\whatsapp\user_data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000102.log 
+2025/03/03-02:02:20.499 33f4 Level-0 table #107: started
+2025/03/03-02:02:20.513 33f4 Level-0 table #107: 202585 bytes OK
+2025/03/03-02:02:20.518 33f4 Delete type=0 #102
+2025/03/03-02:02:20.518 409c Manual compaction at level-0 from '\x00.\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00/\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/03/03-02:02:21.732 33f4 Compacting 1@1 + 1@2 files
+2025/03/03-02:02:21.771 33f4 Generated table #108@1: 36578 keys, 1385165 bytes
+2025/03/03-02:02:21.771 33f4 Compacted 1@1 + 1@2 files => 1385165 bytes
+2025/03/03-02:02:21.775 33f4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/03-02:02:21.776 33f4 Delete type=2 #104
+2025/03/03-02:02:21.776 33f4 Delete type=2 #107
+2025/03/03-02:02:28.201 7ec Level-0 table #110: started
+2025/03/03-02:02:28.217 7ec Level-0 table #110: 106073 bytes OK
+2025/03/03-02:02:28.222 7ec Delete type=0 #106
+2025/03/03-02:02:28.223 33f4 Manual compaction at level-0 from '\x00/\x00\x00\x00' @ 72057594037927935 : 1 .. '\x000\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/03/03-02:02:29.448 409c Compacting 1@1 + 1@2 files
+2025/03/03-02:02:29.504 409c Generated table #111@1: 37016 keys, 1392854 bytes
+2025/03/03-02:02:29.504 409c Compacted 1@1 + 1@2 files => 1392854 bytes
+2025/03/03-02:02:29.509 409c compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/03-02:02:29.509 409c Delete type=2 #108
+2025/03/03-02:02:29.509 409c Delete type=2 #110
+2025/03/03-02:07:30.991 33f4 Level-0 table #113: started
+2025/03/03-02:07:31.010 33f4 Level-0 table #113: 204156 bytes OK
+2025/03/03-02:07:31.015 33f4 Delete type=0 #109
+2025/03/03-02:07:31.016 4094 Manual compaction at level-0 from '\x000\x00\x00\x00' @ 72057594037927935 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/03/03-02:10:45.288 409c Compacting 1@1 + 1@2 files
+2025/03/03-02:10:45.337 409c Generated table #114@1: 37815 keys, 1411152 bytes
+2025/03/03-02:10:45.337 409c Compacted 1@1 + 1@2 files => 1411152 bytes
+2025/03/03-02:10:45.342 409c compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/03-02:10:45.342 409c Delete type=2 #111
+2025/03/03-02:10:45.342 409c Delete type=2 #113
